@@ -264,7 +264,7 @@ def export_user_history(user_id):
         )
 
         print(
-            f"✓ Exported history for user_id={user_id}, "
+            f" Exported history for user_id={user_id}, "
             f"{len(reservations)} rows and emailed CSV"
         )
         return cache_key
