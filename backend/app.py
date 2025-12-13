@@ -55,7 +55,7 @@ def create_app(config_name='development'):
             db.session.commit()
             print("[DB] Admin = udghosh@gmail.com / 1234")
 
-        print("[DB] ✓ Database initialized")
+        print("[DB]  Database initialized")
 
     # Health check
     @app.route('/health', methods=['GET'])
