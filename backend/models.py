@@ -5,7 +5,6 @@ from zoneinfo import ZoneInfo
 IST = ZoneInfo('Asia/Kolkata')
 
 class VehicleUser(db.Model):
-    """User Model - Admin and Regular Users"""
     __tablename__ = "VehicleUser"
     
     User_id = db.Column(db.Integer, primary_key=True)
@@ -14,7 +13,7 @@ class VehicleUser(db.Model):
     Email_Address = db.Column(db.String(120), unique=True, nullable=False)
     User_Password = db.Column(db.String(255), nullable=False)
     Phone_Number = db.Column(db.String(15), nullable=False)
-    Role = db.Column(db.String(20), default="user", nullable=False)  # 'user' or 'admin'
+    Role = db.Column(db.String(20), default="user", nullable=False)  
     Address = db.Column(db.String(300), nullable=False)
     Pin_Code = db.Column(db.String(10), nullable=False)
     Created_At = db.Column(db.DateTime, default=lambda: datetime.now(IST))
@@ -36,7 +35,6 @@ class VehicleUser(db.Model):
 
 
 class ParkingLot(db.Model):
-    """Parking Lot Model"""
     __tablename__ = "ParkingLot"
     
     id = db.Column(db.Integer, primary_key=True)
@@ -46,7 +44,6 @@ class ParkingLot(db.Model):
     Maximum_Number_Spots = db.Column(db.Integer, nullable=False)
     Created_At = db.Column(db.DateTime, default=lambda: datetime.now(IST))
     
-    # Change lazy='joined' for eager loading
     available_spots = db.relationship("ParkingSpot", backref="belong_to_lot", cascade="all, delete", lazy='joined')
     
     def to_dict(self):
@@ -69,7 +66,6 @@ class ParkingLot(db.Model):
 
 
 class ParkingSpot(db.Model):
-    """Parking Spot Model"""
     __tablename__ = "ParkingSpot"
     
     Spot_Id = db.Column(db.Integer, primary_key=True)
@@ -92,7 +88,6 @@ class ParkingSpot(db.Model):
 
 
 class ParkingReservation(db.Model):
-    """Parking Reservation Model"""
     __tablename__ = "ParkingReservation"
     
     Reservation_Id = db.Column(db.Integer, primary_key=True)
