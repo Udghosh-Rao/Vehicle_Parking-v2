@@ -111,7 +111,7 @@ python mail.py
 
 All sent emails will appear in MailHog.
 
-🔑 Environment Variables
+# Environment Variables
 
 Create a .env file (or export manually):
 
@@ -121,7 +121,7 @@ REDIS_URL=redis://localhost:6379/0
 MAIL_HOST=localhost
 MAIL_PORT=1025
 
-📡 API Examples
+# API Examples
 Endpoint	Method	Purpose
 /login	POST	User login
 /park	POST	Park a vehicle
@@ -131,7 +131,7 @@ Endpoint	Method	Purpose
 
 (Actual routes are implemented in backend.)
 
-🧠 System Architecture
+# System Architecture
 User → Vue Frontend → Flask API → Database
                          ↓
                      Celery
@@ -161,7 +161,7 @@ Production deployment guide
 
 This project is open-source and free to use under the MIT License.
 
-👨‍💻 Author
+# Author
 
 Udghosh Rao
 GitHub: https://github.com/Udghosh-Rao
