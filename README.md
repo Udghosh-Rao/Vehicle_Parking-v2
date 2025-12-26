@@ -59,11 +59,11 @@ Open **multiple terminals** and follow these steps.
 
 ---
 
-### 1️⃣ Start Redis
+### 1️ Start Redis
 
 redis-server
 
-2️⃣ Start Backend (Flask)
+2️ Start Backend (Flask)
 cd backend
 pip install -r requirements.txt
 python app.py
@@ -73,7 +73,7 @@ Backend runs at:
 
 http://localhost:5000
 
-3️⃣ Start Frontend (Vue)
+3️ Start Frontend (Vue)
 cd frontend
 npm install
 npm run dev
@@ -83,21 +83,21 @@ Frontend runs at:
 
 http://localhost:3000
 
-4️⃣ Start Celery Worker
+4️ Start Celery Worker
 
 Open a new terminal:
 
 cd backend
 celery -A celery_app.celery worker -l info -P solo
 
-5️⃣ Start Celery Beat (Scheduler)
+5️ Start Celery Beat (Scheduler)
 cd backend
 celery -A celery_app.celery beat -l info
 
 
 This runs scheduled jobs like reminders and reports.
 
-6️⃣ Start MailHog (Optional – Email Viewer)
+6️ Start MailHog (Optional – Email Viewer)
 
 Run MailHog and open:
 
