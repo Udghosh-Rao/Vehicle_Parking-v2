@@ -140,12 +140,12 @@ User → Vue Frontend → Flask API → Database
                          ↓
                    Email / Reports
 
-📌 Why Celery is Used?
+# Why Celery is Used?
 
 Some operations (email, reports, CSV exports) take time.
 Celery runs these in the background without blocking the main API.
 
-🛠️ Future Improvements
+# Future Improvements
 
 Add authentication (JWT)
 
@@ -157,7 +157,7 @@ Admin dashboard
 
 Production deployment guide
 
-📄 License
+# License
 
 This project is open-source and free to use under the MIT License.
 
