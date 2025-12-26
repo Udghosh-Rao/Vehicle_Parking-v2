@@ -1,51 +1,35 @@
-In my project, I run 4 terminals.
-# Terminal 1 — Flask Backend API
- cd backend python app.py
+#  Vehicle Parking System v2
 
+A full-stack **Vehicle Parking Management System** built with **Flask (Python)** for the backend and **Vue.js** for the frontend.  
+The system supports **asynchronous background tasks** using **Celery + Redis** and includes **email notifications and reports**.
 
+This project is designed to simulate a real-world parking management platform with slot booking, reports, and automated tasks.
 
-# Terminal 2 — VueJS Frontend
+---
 
-cd frontend 
-npm run dev
+##  Features
 
+-  Park & Un-park vehicles  
+-  Manage parking slots  
+-  Generate parking reports  
+-  Background jobs using Celery  
+-  Redis for fast task processing  
+-  Email notifications (MailHog for development)  
+-  REST API + Vue.js frontend  
 
-# Terminal 3 — Redis Server
-manually open 
+---
 
+##  Tech Stack
 
-# Terminal 4 — Celery Worker
+| Layer | Technology |
+|------|-----------|
+| Backend | Python, Flask |
+| Frontend | Vue.js |
+| Background Jobs | Celery |
+| Message Broker | Redis |
+| Email (Dev) | MailHog |
 
-cd backend 
+---
 
-celery -A celery_app.celery worker -l info -P solo
+##  Project Structure
 
-
-Executes async tasks
-
-Runs daily reminder email
-
-Runs monthly report
-
-Generates CSV export asynchronously
-
-# Terminal 5 — Celery Beat
-
-
-celery -A celery_app.celery beat -l info
-
-
-Schedules daily reminder
-
-Schedules monthly report
-
-Schedules cache refresh
-
-# Terminal 6 — MailHog (or SMTP debug server)
-MailHog.exe
-
-http://localhost:8025
-python mail.py
-
-
-Shows all emails (daily reminder, booking confirmation, monthly report)
